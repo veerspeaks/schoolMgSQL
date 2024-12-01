@@ -5,7 +5,7 @@ const School = require('../models/schoolModel.cjs');
 exports.addSchool = (req, res) => {
   console.log('Request Body:', req.body);
   const { name, address, latitude, longitude } = req.body;
-  
+  console.log('Extracted Data:', { name, address, latitude, longitude });
   // Input validation
   if (!name || !address || !latitude || !longitude) {
     return res.status(400).json({ error: 'All fields are required.' });
